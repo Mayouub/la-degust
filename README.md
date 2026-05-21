@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# La Dégust' du Grand Coin
 
-## Getting Started
+Site vitrine + réservation de table + click & collect pour un ostréiculteur, avec back-office admin intégré.
 
-First, run the development server:
+## Stack
+
+| Technologie | Usage |
+|---|---|
+| Next.js 15 (App Router) | Framework fullstack |
+| TypeScript strict | Typage |
+| Tailwind CSS v4 | Styles |
+| shadcn/ui | Composants UI |
+| Supabase | BDD Postgres + Auth |
+| Resend | Emails transactionnels |
+| Vercel | Déploiement |
+
+## Lancer le projet en local
 
 ```bash
+# 1. Installer les dépendances
+npm install
+
+# 2. Remplir les variables d'environnement
+# Éditer .env.local et renseigner les clés Supabase et Resend
+
+# 3. Démarrer le serveur de développement
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+L'app est accessible sur [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+  app/
+    (marketing)/      # Site vitrine public
+    (booking)/        # Tunnel réservation + click & collect
+    admin/            # Back-office (protégé)
+    api/              # Route handlers Next.js
+  components/
+    ui/               # Composants shadcn/ui
+    marketing/        # Composants landing page
+    booking/          # Composants réservation/C&C
+    admin/            # Composants dashboard admin
+  lib/
+    supabase/         # Clients Supabase (server, client, middleware)
+    db/               # Schémas Zod et queries
+    utils/            # Utilitaires partagés
+  types/              # Types TypeScript globaux
+```
 
-## Learn More
+## Variables d'environnement requises
 
-To learn more about Next.js, take a look at the following resources:
+| Variable | Description |
+|---|---|
+| `NEXT_PUBLIC_SUPABASE_URL` | URL du projet Supabase |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Clé publique Supabase |
+| `SUPABASE_SERVICE_ROLE_KEY` | Clé service role (back-office uniquement) |
+| `DATABASE_URL` | URL directe Postgres (migrations) |
+| `RESEND_API_KEY` | Clé API Resend |
+| `RESEND_FROM_EMAIL` | Adresse expéditeur emails |
+| `NEXT_PUBLIC_SITE_URL` | URL publique de l'app |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Commandes utiles
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run dev      # Développement (Turbopack)
+npm run build    # Build production
+npm run lint     # Lint ESLint
+```
