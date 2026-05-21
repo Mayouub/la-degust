@@ -409,6 +409,19 @@ export type Database = {
         Args: Record<string, never>
         Returns: boolean
       }
+      check_and_create_reservation: {
+        Args: {
+          p_service_id: string
+          p_date: string
+          p_time: string
+          p_party_size: number
+          p_customer_name: string
+          p_customer_phone: string
+          p_customer_email?: string | null
+          p_notes?: string | null
+        }
+        Returns: Json
+      }
     }
     Enums: {
       order_status: "pending" | "confirmed" | "ready" | "collected" | "cancelled"
