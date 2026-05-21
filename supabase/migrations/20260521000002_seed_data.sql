@@ -68,42 +68,42 @@ INSERT INTO product_categories (name, sort_order, is_active) VALUES
 INSERT INTO products (category_id, name, description, unit_label, price_cents, is_available, stock_quantity, sort_order)
 SELECT id, 'Huîtres Fine de Claire n°3',
   'Huîtres élevées en claire pour un affinage délicat. Goût iodé, chair ferme.',
-  'douzaine', 1200, true, null, 1
+  'douzaine', 1200, true, null::integer, 1
 FROM product_categories WHERE name = 'Huîtres'
 UNION ALL
 SELECT id, 'Huîtres Fine de Claire n°2',
   'Calibre supérieur, chair plus charnue. Idéales pour les amateurs.',
-  'douzaine', 1400, true, null, 2
+  'douzaine', 1400, true, null::integer, 2
 FROM product_categories WHERE name = 'Huîtres'
 UNION ALL
 SELECT id, 'Huîtres Spéciale de Claire n°3',
   'Affinée 4 semaines minimum en claire. Notes noisettées et iodées.',
-  'douzaine', 1500, true, null, 3
+  'douzaine', 1500, true, null::integer, 3
 FROM product_categories WHERE name = 'Huîtres'
 UNION ALL
 SELECT id, 'Huîtres Fine de Claire n°3',
   'Format demi-douzaine, parfait pour une dégustation individuelle.',
-  'demi-douzaine', 700, true, null, 4
+  'demi-douzaine', 700, true, null::integer, 4
 FROM product_categories WHERE name = 'Huîtres'
 UNION ALL
 SELECT id, 'Plateau Découverte',
   '12 huîtres fines de claire assortties, pain de seigle et beurre salé.',
-  'plateau', 1800, true, null, 1
+  'plateau', 1800, true, null::integer, 1
 FROM product_categories WHERE name = 'Plateaux'
 UNION ALL
 SELECT id, 'Plateau Prestige',
   '24 huîtres spéciales, pain artisanal, beurre demi-sel et citron.',
-  'plateau', 3800, true, null, 2
+  'plateau', 3800, true, null::integer, 2
 FROM product_categories WHERE name = 'Plateaux'
 UNION ALL
 SELECT id, 'Pain de seigle au beurre',
   'Tranche de pain de seigle artisanal accompagnée de beurre demi-sel.',
-  'portion', 300, true, null, 1
+  'portion', 300, true, null::integer, 1
 FROM product_categories WHERE name = 'Accompagnements'
 UNION ALL
 SELECT id, 'Vin blanc sec de Vendée (75 cl)',
   'Fiefs Vendéens — cépage Chenin, fruité et minéral, accord parfait avec les huîtres.',
-  'bouteille', 1200, true, null, 2
+  'bouteille', 1200, true, null::integer, 2
 FROM product_categories WHERE name = 'Accompagnements';
 
 -- ============================================================
