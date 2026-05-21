@@ -39,9 +39,14 @@ yarn-error.log*
 # Claude Code
 .claude/
 
+# Dossier adjacent (repo git séparé)
+La degust/
+
 # Fichiers locaux sensibles
 *.txt
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+.vercel
