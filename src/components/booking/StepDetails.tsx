@@ -208,7 +208,7 @@ export function StepDetails({
                     htmlFor="rgpd"
                     className="text-sm text-marine/70 leading-relaxed cursor-pointer"
                   >
-                    J'accepte que mes informations soient utilisées pour gérer
+                    J&apos;accepte que mes informations soient utilisées pour gérer
                     ma réservation, conformément à la politique de
                     confidentialité.{" "}
                     <span className="text-red-500">*</span>

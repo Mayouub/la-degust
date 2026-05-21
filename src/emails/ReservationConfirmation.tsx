@@ -8,7 +8,6 @@ import {
   Text,
   Link,
   Hr,
-  Img,
 } from "@react-email/components";
 
 type Props = {
@@ -53,7 +52,7 @@ export default function ReservationConfirmation({
               letterSpacing: "0.05em",
             }}
           >
-            La Dégust' du Grand Coin
+            La Dégust&apos; du Grand Coin
           </Text>
           <Text style={{ color: BEURRE, opacity: 0.7, fontSize: "13px", margin: "4px 0 0" }}>
             Ostréiculteur depuis 1987
@@ -92,7 +91,7 @@ export default function ReservationConfirmation({
 
             <Text style={{ color: "#666", fontSize: "13px", lineHeight: "1.6", margin: "0 0 24px" }}>
               Vous recevrez un rappel la veille de votre réservation.
-              En cas d'empêchement, merci de nous prévenir au moins 24h à l'avance.
+              En cas d&apos;empêchement, merci de nous prévenir au moins 24h à l&apos;avance.
             </Text>
 
             {/* Lien annulation */}
@@ -118,7 +117,7 @@ export default function ReservationConfirmation({
               lineHeight: "1.6",
             }}
           >
-            La Dégust' du Grand Coin · 85 Rue du Grand Coin · 85550 La Barre-de-Monts
+            La Dégust&apos; du Grand Coin · 85 Rue du Grand Coin · 85550 La Barre-de-Monts
             <br />
             Tél. 02 51 68 XX XX · contact@ladegustdugrandcoin.fr
           </Text>

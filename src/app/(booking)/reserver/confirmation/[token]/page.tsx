@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { format } from "date-fns";
 import { fr } from "date-fns/locale";
-import { CheckCircle2Icon, CalendarIcon, XCircleIcon } from "lucide-react";
+import { CheckCircle2Icon, XCircleIcon } from "lucide-react";
 import { createAdminClient } from "@/lib/supabase/server";
 import { CancelButton } from "./CancelButton";
 import { ICSDownloadButton } from "./ICSDownloadButton";
@@ -48,7 +48,7 @@ export default async function ConfirmationPage({ params }: Props) {
             href="/"
             className="text-beurre/60 hover:text-beurre text-sm transition-colors"
           >
-            ← La Dégust' du Grand Coin
+            ← La Dégust&apos; du Grand Coin
           </Link>
         </div>
       </header>
