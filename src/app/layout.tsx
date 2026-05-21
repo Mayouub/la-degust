@@ -22,9 +22,16 @@ const caveat = Caveat({
 });
 
 export const metadata: Metadata = {
-  title: "La Dégust' du Grand Coin",
+  title: {
+    default: "La Dégust' du Grand Coin",
+    template: "%s | La Dégust' du Grand Coin",
+  },
   description:
-    "Dégustation d'huîtres en direct du producteur, au cœur du marais poitevin vendéen.",
+    "Dégustation d'huîtres en direct du producteur, au cœur du marais poitevin vendéen. Réservation en ligne et Click & Collect.",
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.ladegustdugrandcoin.fr"
+  ),
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({

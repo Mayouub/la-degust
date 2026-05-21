@@ -10,14 +10,14 @@ export default function DesignSystemPage() {
   if (process.env.NODE_ENV !== "development") notFound();
 
   const palette = [
-    { name: "marine", hex: "#1B3A5B", tw: "bg-marine", dark: true },
-    { name: "encre", hex: "#0F1A2B", tw: "bg-encre", dark: true },
-    { name: "beurre", hex: "#FAF4A6", tw: "bg-beurre", dark: false },
-    { name: "sable", hex: "#F4EEDD", tw: "bg-sable", dark: false },
-    { name: "papier", hex: "#FAF6E8", tw: "bg-papier", dark: false },
-    { name: "eau", hex: "#5C8FCF", tw: "bg-eau", dark: true },
-    { name: "algue", hex: "#4A6A2A", tw: "bg-algue", dark: true },
-    { name: "kraft", hex: "#C9B58F", tw: "bg-kraft", dark: false },
+    { name: "marine", hex: "#1B3A5B", tw: "bg-marine", isDark: true },
+    { name: "encre", hex: "#0F1A2B", tw: "bg-encre", isDark: true },
+    { name: "beurre", hex: "#FAF4A6", tw: "bg-beurre", isDark: false },
+    { name: "sable", hex: "#F4EEDD", tw: "bg-sable", isDark: false },
+    { name: "papier", hex: "#FAF6E8", tw: "bg-papier", isDark: false },
+    { name: "eau", hex: "#5C8FCF", tw: "bg-eau", isDark: true },
+    { name: "algue", hex: "#4A6A2A", tw: "bg-algue", isDark: true },
+    { name: "kraft", hex: "#C9B58F", tw: "bg-kraft", isDark: false },
   ];
 
   return (
@@ -38,7 +38,7 @@ export default function DesignSystemPage() {
             Palette
           </h2>
           <div className="grid grid-cols-4 gap-4 sm:grid-cols-8">
-            {palette.map(({ name, hex, tw, dark }) => (
+            {palette.map(({ name, hex, tw }) => (
               <div key={name} className="flex flex-col gap-2">
                 <div
                   className={`${tw} h-20 w-full rounded-lg ring-1 ring-kraft/30`}
@@ -64,7 +64,7 @@ export default function DesignSystemPage() {
                 Anton — font-display — Titres display
               </p>
               <p className="font-display text-6xl text-marine uppercase leading-none">
-                La Dégust'
+                La Dégust&apos;
               </p>
               <p className="font-display text-4xl text-marine uppercase">
                 Du Grand Coin
@@ -79,7 +79,7 @@ export default function DesignSystemPage() {
                 Caveat — font-hand — Accents manuscrits
               </p>
               <p className="font-hand text-5xl text-marine">
-                La Dégust' du Grand Coin
+                La Dégust&apos; du Grand Coin
               </p>
               <p className="font-hand text-3xl text-eau">
                 Venez savourer nos huîtres…
@@ -105,7 +105,7 @@ export default function DesignSystemPage() {
                 Prix indicatif — 12 huîtres n°3 · 12,00 €
               </p>
               <p className="text-xs text-encre/50 font-mono">
-                42 Route du Marais, 85580 Saint-Michel-en-l'Herm
+                42 Route du Marais, 85580 Saint-Michel-en-l&apos;Herm
               </p>
             </div>
           </div>
@@ -195,7 +195,7 @@ export default function DesignSystemPage() {
             {/* OpenStatusBadge en live */}
             <div>
               <p className="text-xs text-kraft uppercase tracking-widest mb-4">
-                Statut d'ouverture (live)
+                Statut d&apos;ouverture (live)
               </p>
               <OpenStatusBadge />
             </div>
@@ -304,7 +304,7 @@ export default function DesignSystemPage() {
 
       <footer className="bg-encre px-8 py-6 text-center">
         <p className="text-kraft/60 text-xs font-mono">
-          Design System · La Dégust' du Grand Coin · dev only
+          Design System · La Dégust&apos; du Grand Coin · dev only
         </p>
       </footer>
     </div>
